@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+    id "io.freefair.lombok" version "8.4"
+}
+
+group 'ru.netology'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    // https://mvnrepository.com/artifact/com.codeborne/selenide
+    testImplementation 'com.codeborne:selenide:6.19.1'
+    // https://mvnrepository.com/artifact/org.webjars.npm/faker
+//    testImplementation 'org.webjars.npm:faker:4.1.0'
+    testImplementation 'com.github.javafaker:javafaker:1.0.2'
+
+    testImplementation 'commons-dbutils:commons-dbutils:1.7'
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    testImplementation 'mysql:mysql-connector-java:8.0.28'
+    // https://mvnrepository.com/artifact/org.postgresql/postgresql
+    testImplementation 'org.postgresql:postgresql:42.5.4'
+
+    testImplementation 'io.qameta.allure:allure-selenide:2.20.1'
+
+}
+
+test {
+    useJUnitPlatform()
+
+    systemProperty 'selenide.headless', System.getProperty('selenide.headless')
+
+    systemProperty 'db.url', System.getProperty('db.url', "jdbc:mysql://localhost:3306/app")
+    systemProperty 'db.user', System.getProperty('db.user', "app")
+    systemProperty 'db.password', System.getProperty('db.password', "pass")
+}
