@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id "io.freefair.lombok" version "8.4"
+    id 'io.qameta.allure' version '2.11.2'
 }
 
 group 'ru.netology'
@@ -27,6 +28,12 @@ dependencies {
     testImplementation 'org.postgresql:postgresql:42.5.4'
 
     testImplementation 'io.qameta.allure:allure-selenide:2.20.1'
+    // https://mvnrepository.com/artifact/io.qameta.allure/allure-junit5
+    testImplementation 'io.qameta.allure:allure-junit5:2.23.0'
+    // https://mvnrepository.com/artifact/io.qameta.allure/allure-java-commons
+    implementation 'io.qameta.allure:allure-java-commons:2.23.0'
+
+
 
 }
 
