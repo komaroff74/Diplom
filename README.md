@@ -12,10 +12,11 @@
 2. Склонированный проект окрыть в IDEA.
 3. Открыть терминал в IDEA.
 4. Запустить контейнеры командой `docker-compose up`.
-5. Запустить приложение командой: `java -jar aqa-shop.jar`.
+5. Запустить приложение командой: 
+    -Для работы с MySQL `java "-Dspring.datasource.url=jdbc:mysql://localhost:3306/app" -jar aqa-shop.jar`.
+    -Для работы с Postgres `java "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/app" -jar aqa-shop.jar`.
 6. Проверить доступность приложения в браузере по ссылке http://localhost:8080/.
-7. Запустить тесты: `./gradlew test`
+7. Запустить тесты: `Ctrl+Shift+F10`
 8. Запустить Allure для создания отчёта командой `./gradlew allureServe`.
 9. Остановить Allure комбинацией клавиш **Ctrl+C**, а после ввести **Y** для подтверждения.
-10. Остановить приложение комбинацией клавиш **Ctrl+C**.
-11. Остановить работу контейнеров командой `docker-compose down`.
+10. Остановить работу контейнеров командой `docker-compose down`.

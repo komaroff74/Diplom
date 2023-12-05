@@ -12,22 +12,22 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class PaymentPage {
-    private SelenideElement heading = $$("h3").find(exactText("Оплата по карте"));
-    private SelenideElement cardNumberField = $(byText("Номер карты")).parent().$("[class='input__control']");
-    private SelenideElement monthField = $(byText("Месяц")).parent().$("[class='input__control']");
-    private SelenideElement yearField = $(byText("Год")).parent().$("[class='input__control']");
-    private SelenideElement cardholderField = $(byText("Владелец")).parent().$("[class='input__control']");
-    private SelenideElement cvcField = $(byText("CVC/CVV")).parent().$("[class='input__control']");
-    private SelenideElement continueButton = $$(".button").find(exactText("Продолжить"));
+    private final SelenideElement cardNumberField = $(byText("Номер карты")).parent().$("[class='input__control']");
+    private final SelenideElement monthField = $(byText("Месяц")).parent().$("[class='input__control']");
+    private final SelenideElement yearField = $(byText("Год")).parent().$("[class='input__control']");
+    private final SelenideElement cardholderField = $(byText("Владелец")).parent().$("[class='input__control']");
+    private final SelenideElement cvcField = $(byText("CVC/CVV")).parent().$("[class='input__control']");
+    private final SelenideElement continueButton = $$(".button").find(exactText("Продолжить"));
 
-    private SelenideElement successfullyNotification = $(byText("Успешно"));
-    private SelenideElement errorNotification = $(byText("Ошибка"));
-    private SelenideElement wrongFormatError = $(byText("Неверный формат"));
-    private SelenideElement cardExpiredError = $(byText("Истёк срок действия карты"));
-    private SelenideElement cardExpirationDateError = $(byText("Неверно указан срок действия карты"));
-    private SelenideElement requiredFieldError = $(byText("Поле обязательно для заполнения"));
+    private final SelenideElement successfullyNotification = $(byText("Успешно"));
+    private final SelenideElement errorNotification = $(byText("Ошибка"));
+    private final SelenideElement wrongFormatError = $(byText("Неверный формат"));
+    private final SelenideElement cardExpiredError = $(byText("Истёк срок действия карты"));
+    private final SelenideElement cardExpirationDateError = $(byText("Неверно указан срок действия карты"));
+    private final SelenideElement requiredFieldError = $(byText("Поле обязательно для заполнения"));
 
     public PaymentPage() {
+        SelenideElement heading = $$("h3").find(exactText("Оплата по карте"));
         heading.shouldBe(visible);
     }
 

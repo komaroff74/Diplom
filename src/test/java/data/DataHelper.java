@@ -41,7 +41,8 @@ public class DataHelper {
         return new Card(generateCardNumber(), getShiftedMonth(0), getShiftedYear(2), generateCardholder(), "");
     }
 
-    public static Card getRandomValidCard() {
+    public static Card
+    getRandomValidCard() {
         return new Card(generateCardNumber(), getShiftedMonth(0), getShiftedYear(2), generateCardholder(), generateCvcCode());
     }
 
