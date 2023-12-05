@@ -7,10 +7,19 @@ plugins {
 group 'ru.netology'
 version '1.0-SNAPSHOT'
 
+<<<<<<< HEAD
 sourceCompatibility = 11
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
 
+=======
+allure {
+    version = '2.20.1'
+    useJUnit5 {
+        version = '2.20.1'
+    }
+}
+>>>>>>> 0edd858e1f8c942b742be737e0dceb7f16d7ddcc
 repositories {
     mavenCentral()
 }
@@ -36,10 +45,8 @@ dependencies {
     // https://mvnrepository.com/artifact/io.qameta.allure/allure-junit5
     testImplementation 'io.qameta.allure:allure-junit5:2.23.0'
     // https://mvnrepository.com/artifact/io.qameta.allure/allure-java-commons
-    implementation 'io.qameta.allure:allure-java-commons:2.23.0'
-
-
-
+    testImplementation 'io.qameta.allure:allure-java-commons:2.23.0'
+//    testImplementation "io.freefair.gradle:lombok-plugin:8.4"
 }
 
 test {

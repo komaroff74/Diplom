@@ -2,22 +2,28 @@ package page;
 
 import com.codeborne.selenide.SelenideElement;
 import data.DataHelper;
+import org.openqa.selenium.By;
 
 import java.time.Duration;
+import java.util.Objects;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class CreditPage {
-    private final SelenideElement cardNumberField = $(byText("Номер карты")).parent().$("[class='input__control']");
-        private final SelenideElement monthField = $(byText("Месяц")).parent().$("[class='input__control']");
-        private final SelenideElement yearField = $(byText("Год")).parent().$("[class='input__control']");
-        private final SelenideElement cardholderField = $(byText("Владелец")).parent().$("[class='input__control']");
-        private final SelenideElement cvcField = $(byText("CVC/CVV")).parent().$("[class='input__control']");
-        private final SelenideElement continueButton = $$(".button").find(exactText("Продолжить"));
+    private final SelenideElement cardNumberField = Objects.requireNonNull($(byText("Номер карты"))).parent().$("[class='input__control']");
+        private final SelenideElement monthField = Objects.requireNonNull($(byText("Месяц"))).parent().$("[class='input__control']");
+        private final SelenideElement yearField = Objects.requireNonNull($(byText("Год"))).parent().$("[class='input__control']");
+        private final SelenideElement cardholderField = Objects.requireNonNull($(byText("Владелец"))).parent().$("[class='input__control']");
+        private final SelenideElement cvcField = Objects.requireNonNull($(byText("CVC/CVV"))).parent().$("[class='input__control']");
+
+    private SelenideElement $(By byText) {
+        return null;
+    }
+
+    private final SelenideElement continueButton;
 
         private final SelenideElement successfullyNotification = $(byText("Успешно"));
         private final SelenideElement errorNotification = $(byText("Ошибка"));
@@ -29,6 +35,7 @@ public class CreditPage {
         public CreditPage() {
             SelenideElement heading = $$("h3").find(exactText("Кредит по данным карты"));
             heading.shouldBe(visible);
+            continueButton = $$(".button").find(exactText("Продолжить"));
         }
 
         public void fillingFields(DataHelper.Card card) {
