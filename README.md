@@ -2,8 +2,8 @@
 ### Документы
 1. [Задание для работы](https://github.com/netology-code/qa-diploma)
 2. [План автоматизации тестирования](https://github.com/komaroff74/Diplom/blob/main/Plan.md)
-3. [Отчёт по итогам тестирования]()
-4. [Отчёт по автоматизации тестирования]()
+3. [Отчёт по итогам тестирования](https://github.com/komaroff74/Diplom/blob/main/Report.md)
+4. [Отчёт по автоматизации тестирования](https://github.com/komaroff74/Diplom/blob/main/Summary.md)
 ### Предустановленное окружение
 - IntelliJ IDEA
 - Docker Desktop
